@@ -15,10 +15,8 @@ def displayFunc(A):
         print(line)
     print("")
 
-
 def gauss(A):
     n = len(A)
-
     for i in range(0, n):
         # Search for max value in the column
         maxEl = abs(A[i][i])
@@ -53,19 +51,18 @@ def gauss(A):
 
 
 if __name__ == "__main__":
-    n = input()
-
+    n = eval(input())
     A = [[0 for j in range(n+1)] for i in range(n)]
 
     # Read the input
     for i in range(0, n):
-        line = map(Decimal, raw_input().split(" "))
+        line = list(map(Decimal, input().split(" ")))
         for j, el in enumerate(line):
             A[i][j] = el
-    raw_input()
+    input()
 
-    line = raw_input().split(" ")
-    lastLine = map(Decimal, line)
+    line = input().split(" ")
+    lastLine = list(map(Decimal, line))
     for i in range(0, n):
         A[i][n] = lastLine[i]
 
